@@ -17,10 +17,10 @@ const Form = () => {
 
   useEffect(() => {
     const userData = sessionStorage.getItem("user");
-    console.log(userData);
+    // console.log(userData);
     const userInfo = JSON.parse(userData);
     setUserData(userInfo);
-  }, []);
+  }, [userData]);
 
   console.log(userData);
 

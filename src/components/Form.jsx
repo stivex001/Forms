@@ -6,6 +6,8 @@ const Form = () => {
   const navigate = useNavigate();
 
   const values = {
+    firstName: "",
+    lastName: "",
     userName: "",
     email: "",
     password: "",
@@ -48,6 +50,26 @@ const Form = () => {
         onSubmit={handleSubmit}
       >
         <h1 className="text-white text-lg text-center">Sign Up Form</h1>
+        <div className="mt-8 p-2 ">
+          <input
+            className="bg-[#719e59] shodow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
+            name="firstName"
+            value={userValues.firstName}
+            onChange={handleChange}
+            placeholder="firstname"
+          />
+        </div>
+        <div className="mt-8 p-2 ">
+          <input
+            className="bg-[#719e59] shodow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
+            name="lastName"
+            value={userValues.lastName}
+            onChange={handleChange}
+            placeholder="lastname"
+          />
+        </div>
         <div className="mt-8 p-2 ">
           <input
             className="bg-[#719e59] shodow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"

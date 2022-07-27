@@ -1,14 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { AiOutlineCheck } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import avatar from "../components/avater.jpeg";
 
 const WelcomePage = () => {
-  const [myData, setMyData] = useState({});
-
   const userData = sessionStorage.getItem("user");
   const userInfo = JSON.parse(userData);
-  // setMyData(userInfo);
 
   useEffect(() => {
     document.title = "welcome To Your Dashboard";

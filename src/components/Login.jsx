@@ -44,7 +44,7 @@ const Form = () => {
   //   console.log(userValues);
 
   return (
-    <div className="flex flex-wrap justify-center mt-20 ">
+    <section className="md:h-screen flex justify-center items-center gap-3 p-5 mt-3">
       <form
         action=""
         className="shadown-md bg-[#719e59] rounded px-8 pt-6 pb-8 mb-4"
@@ -96,7 +96,7 @@ const Form = () => {
           </Link>
         </p>
       </form>
-    </div>
+    </section>
   );
 };
 

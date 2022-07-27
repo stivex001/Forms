@@ -4,10 +4,11 @@ const Nav = () => {
   const menuContent = [
     { id: 1, label: "Register", link: "/" },
     { id: 2, label: "Login", link: "/login" },
+    { id: 3, label: "Dashboard", link: "/welcome" },
   ];
 
   return (
-    <nav className="flex justify-between items-center bg-slate-200 text-black px-5 py-3">
+    <nav className=" max-w-screen-sm: flex justify-between items-center bg-[#76b957] text-black px-5 py-3 md: flex flex-col bg-[#76b957]">
       <h1 className="text-2xl font-mono font-black">Techathon</h1>
       <ul className="flex gap-3">
         {menuContent.map((contents) => (

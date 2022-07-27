@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Form = () => {
   const navigate = useNavigate();
@@ -16,8 +16,9 @@ const Form = () => {
   const [userData, setUserData] = useState({});
 
   useEffect(() => {
+    document.title = "Login Page";
     const userData = sessionStorage.getItem("user");
-    // console.log(userData);
+
     const userInfo = JSON.parse(userData);
     setUserData(userInfo);
   }, [userData]);
@@ -71,13 +72,29 @@ const Form = () => {
             onChange={handleChange}
             placeholder="Password"
           />
-          <AiFillEye onClick={() => setShowPassword((prev) => !prev)} />
-          {/* <AiFillEyeInvisible /> */}
+          <AiFillEye
+            className={`w-6 h-6 cursor-pointer ${
+              showPassword ? "block" : "hidden"
+            }`}
+            onClick={() => setShowPassword((prev) => !prev)}
+          />
+          <AiFillEyeInvisible
+            className={`w-6 h-6 cursor-pointer ${
+              showPassword ? "hidden" : "block"
+            } `}
+            onClick={() => setShowPassword((prev) => !prev)}
+          />
         </div>
 
         <div className="mt-8">
           <button className="bg-[#76b957] p-2 w-full text-white">Log In</button>
         </div>
+        <p className="text-center text-sm mt-3">
+          Don't have an account?{" "}
+          <Link className="text-indigo-500 font-bold" to="/">
+            Create one!
+          </Link>
+        </p>
       </form>
     </div>
   );

@@ -32,8 +32,10 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const user = JSON.stringify(userValues);
-    sessionStorage.getItem("user") === null &&
-      sessionStorage.setItem("user", user);
+    sessionStorage.getItem("user") === null
+      ? sessionStorage.setItem("user", user)
+      : sessionStorage.removeItem("user");
+    sessionStorage.setItem("user", user);
 
     userValues.userName.length > 6 &&
     userValues.password === userValues.confirmPassword

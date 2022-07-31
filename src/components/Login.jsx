@@ -28,10 +28,15 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    userData?.userName === userValues.userName &&
-    userData?.password === userValues.password
-      ? alert(`LoggedIn Successfully! ${navigate("/welcome")}`)
-      : alert("Incorrect details!");
+    if (
+      userData?.userName === userValues.userName &&
+      userData?.password === userValues.password
+    ) {
+      sessionStorage.setItem("userName", userValues.userName);
+      alert(`LoggedIn Successfully! ${navigate("/welcome")}`);
+    } else {
+      alert("Incorrect details!");
+    }
   };
 
   const handleChange = (e) => {

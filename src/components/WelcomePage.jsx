@@ -1,14 +1,16 @@
 import { useEffect } from "react";
 import { AiOutlineCheck } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import avatar from "../components/avater.jpeg";
 
 const WelcomePage = () => {
   const userData = sessionStorage.getItem("user");
   const userInfo = JSON.parse(userData);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "welcome To Your Dashboard";
+    // const username = sessionStorage.getItem("user");
   }, []);
 
   return (
@@ -92,12 +94,15 @@ const WelcomePage = () => {
             </p>
           </div>
         </div>
-        <Link
-          to={"/"}
+        <button
           className="bg-[#76b957] p-2 w-full text-white font-extrabold flex justify-center text-center"
+          onClick={() => {
+            sessionStorage.removeItem(userData);
+            navigate("/login");
+          }}
         >
           LOG OUT
-        </Link>
+        </button>
       </div>
     </section>
   );
